@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Configuración del Sistema">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator prefWidth="200.0" />
+      <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+         <tabs>
+            <Tab text="General">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <GridPane hgap="10.0" vgap="10.0">
+                           <children>
+                              <Label text="Nombre de la Empresa:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtNombreEmpresa" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              <Label text="RUC:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtRUC" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Dirección:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtDireccion" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtTelefono" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Salarios">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <GridPane hgap="10.0" vgap="10.0">
+                           <children>
+                              <Label text="Salario Mínimo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtSalarioMinimo" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              <Label text="% Aporte IPS Empleado:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtAporteIPSEmpleado" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="% Aporte IPS Patronal:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtAporteIPSPatronal" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <CheckBox fx:id="chkCalculoAutomatico" text="Cálculo automático de aportes IPS" />
+                        <CheckBox fx:id="chkNotificacionVencimientos" text="Notificaciones de vencimientos de contratos" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Base de Datos">
+               <content>
+                  <VBox spacing="15.0">
+                     <children>
+                        <GridPane hgap="10.0" vgap="10.0">
+                           <children>
+                              <Label text="Ruta de Base de Datos:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtRutaBD" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              <Button mnemonicParsing="false" text="Examinar" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                           </children>
+                        </GridPane>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Respaldar Base de Datos" />
+                              <Button mnemonicParsing="false" text="Restaurar Base de Datos" />
+                              <Button mnemonicParsing="false" text="Optimizar Base de Datos" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" text="Guardar Configuración" />
+            <Button mnemonicParsing="false" text="Restaurar Valores por Defecto" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

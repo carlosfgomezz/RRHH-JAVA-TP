@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="sisrh.odb" transaction-type="RESOURCE_LOCAL">
+        <provider>com.objectdb.jpa.Provider</provider>
+        
+        <!-- Entidades -->
+        <class>com.sisrh.model.Empleado</class>
+        <class>com.sisrh.model.Contrato</class>
+        <class>com.sisrh.model.Salario</class>
+        <class>com.sisrh.model.Usuario</class>
+        <class>com.sisrh.model.Cargo</class>
+        <class>com.sisrh.model.Categoria</class>
+        <class>com.sisrh.model.HistorialLaboral</class>
+        <class>com.sisrh.model.Configuracion</class>
+        <class>com.sisrh.model.HistorialSesion</class>
+        
+        <properties>
+            <!-- Configuración de ObjectDB -->
+            <property name="javax.persistence.jdbc.url" value="$objectdb/db/sisrh.odb"/>
+            <property name="javax.persistence.jdbc.user" value="admin"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            
+            <!-- Configuración de desarrollo -->
+            <property name="objectdb.drop-on-close" value="false"/>
+            <property name="objectdb.schema.version" value="1"/>
+            
+            <!-- Configuración de logging -->
+            <property name="objectdb.log.level" value="INFO"/>
+            <property name="objectdb.log.queries" value="true"/>
+            <property name="objectdb.log.updates" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

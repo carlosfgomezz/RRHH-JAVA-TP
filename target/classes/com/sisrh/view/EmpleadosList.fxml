@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sisrh.controller.EmpleadosListController">
+   <children>
+      <Label text="Gestión de Empleados">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator prefWidth="200.0" />
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Buscar:" />
+            <TextField fx:id="txtBuscar" prefHeight="25.0" prefWidth="250.0" promptText="Ingrese nombre, apellido o cédula" />
+            <Button mnemonicParsing="false" onAction="#handleBuscar" text="Buscar" />
+            <Button mnemonicParsing="false" onAction="#handleLimpiarBusqueda" text="Limpiar" />
+         </children>
+      </HBox>
+      <TableView fx:id="tblEmpleados" prefHeight="400.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colCedula" prefWidth="100.0" text="Cédula" />
+          <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+          <TableColumn fx:id="colApellido" prefWidth="150.0" text="Apellido" />
+          <TableColumn fx:id="colCargo" prefWidth="150.0" text="Cargo" />
+          <TableColumn fx:id="colFechaIngreso" prefWidth="120.0" text="Fecha Ingreso" />
+          <TableColumn fx:id="colActivo" prefWidth="80.0" text="Activo" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleNuevoEmpleado" text="Nuevo Empleado" />
+            <Button mnemonicParsing="false" onAction="#handleEditarEmpleado" text="Editar" />
+            <Button mnemonicParsing="false" onAction="#handleVerHistorial" text="Ver Historial" />
+            <Button mnemonicParsing="false" onAction="#handleDesactivarEmpleado" text="Desactivar" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
